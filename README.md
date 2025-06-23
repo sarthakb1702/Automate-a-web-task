@@ -47,7 +47,8 @@ The script creates a text file named:
 cbitosc_info.txt
 ```
 
-💡 Notes
+💡 Notes:
+
 Make sure to use a dummy account to avoid violating Instagram’s Terms of Service.
 
 Instagram’s layout may change; XPath selectors may need to be updated accordingly.
