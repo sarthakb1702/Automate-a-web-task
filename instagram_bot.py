@@ -24,7 +24,7 @@ try:
     username_input.send_keys(USERNAME)
     password_input.send_keys(PASSWORD)
     password_input.send_keys(Keys.RETURN)
-    print("✅ Logged in")
+    print(" Logged in")
 
     # Save Login Info popup
     try:
@@ -32,7 +32,7 @@ try:
             EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Save')]"))
         )
         save_btn.click()
-        print("✅ Clicked Save Login Info")
+        print(" Clicked Save Login Info")
     except:
         print("ℹ Save Login Info popup not shown")
 
@@ -42,7 +42,7 @@ try:
             EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Not Now')]"))
         )
         notif_btn.click()
-        print("✅ Dismissed Notifications popup")
+        print("Dismissed Notifications popup")
     except:
         print("ℹ No Notifications popup")
 
@@ -58,7 +58,7 @@ try:
         driver.execute_script("arguments[0].scrollIntoView(true);", follow_btn)
         time.sleep(1)
         driver.execute_script("arguments[0].click();", follow_btn)
-        print("✅ Followed the account using JS click")
+        print("Followed the account using JS click")
     except:
         print("ℹ Already following or Follow button not clickable")
 
@@ -74,9 +74,9 @@ try:
             profile_info["Following"] = stat_labels[2].text.split('\n')[0]
         else:
             profile_info["Posts"] = profile_info["Followers"] = profile_info["Following"] = "N/A"
-        print("✅ Extracted profile stats")
+        print("Extracted profile stats")
     except Exception as e:
-        print(f"❌ Could not extract stats: {e}")
+        print(f" Could not extract stats: {e}")
         profile_info["Posts"] = profile_info["Followers"] = profile_info["Following"] = "N/A"
 
     # Save to text file
@@ -84,10 +84,10 @@ try:
         for k, v in profile_info.items():
             f.write(f"{k}: {v}\n")
 
-    print("✅ Stats saved to cbitosc_info.txt")
+    print("Stats saved to cbitosc_info.txt")
 
     time.sleep(10)
 
 finally:
     driver.quit()
-    print("✅ Browser closed")
+    print("Browser closed")
